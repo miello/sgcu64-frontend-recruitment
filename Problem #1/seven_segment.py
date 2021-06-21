@@ -21,6 +21,20 @@ segment_str = '''
  __ 
 '''
 
+'''
+Reference: https://www.geeksforgeeks.org/clear-screen-python/
+The method for cleaning the console or terminal
+Input:
+    None
+Return:
+    None
+'''
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
 # Represent the seperator between hours, minutes and seconds
 seperator = ' · '
 
@@ -107,3 +121,31 @@ def printSevenSegment(hours, minutes, seconds):
 
 # Input time
 hours, minutes, seconds = map(int, input().split(':'))
+
+# Count down timer
+while hours >= 0 and minutes >= 0 and seconds >= 0:
+    # Clear the console
+    clear()
+
+    printSevenSegment(hours, minutes, seconds)
+
+    # Break if invalid case
+    if minutes > 59 or seconds > 59:
+        print('\nInvalid Time')
+        break
+
+    # Reduce second by one
+    seconds -= 1
+
+    # If seconds is less than zero then reduce minutes by one and increase seconds by 60
+    if seconds < 0:
+        seconds += 60
+        minutes -= 1
+    
+    # If minutes is less than zero then reduce hours by one and increase minutes by 60
+    if minutes < 0:
+        minutes += 60
+        hours -= 1
+
+    # Sleep for one second
+    sleep(1)
