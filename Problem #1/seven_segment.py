@@ -21,5 +21,13 @@ seperator = ' · '
 # Ignore first newline character and split to each line
 segment_str = segment_str[1:].split('\n')
 
+# The method for generating segment for each number
+def generateSegment(num, isInvalid = False):
+    pass
+
+# The method for printing the seven segment
+def printSevenSegment(hours, minutes, seconds):
+    pass
+
 # Input
 hours, minutes, seconds = map(int, input().split(':'))
