@@ -21,12 +21,24 @@ seperator = ' · '
 # Ignore first newline character and split to each line
 segment_str = segment_str[1:].split('\n')
 
-# The method for generating segment for each number
+'''
+The method for generating list segment template for each number
+Input:
+    num: the number which want to generated the segment
+    isInvalid: True if the input is invalid otherwise False
+Return:
+    List of tuple which in form (x, y)
+    x: starting row index in template
+    y: starting column index in template 
+'''
 def generateSegment(num, isInvalid = False):
+    # invalid case return the "_" case
     if isInvalid:
         return [(6, 0), (6, 0)]
 
     extractList = []
+
+    # Loop while until length of final list is two
     while len(extractList) != 2:
         digit = num % 10
         row = 0
@@ -35,6 +47,8 @@ def generateSegment(num, isInvalid = False):
             digit -= 5
         extractList.append((row, digit * 4))
         num //= 10
+
+    # Reverse the final list
     return extractList[::-1]
 
 ''' 
