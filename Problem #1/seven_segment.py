@@ -23,7 +23,19 @@ segment_str = segment_str[1:].split('\n')
 
 # The method for generating segment for each number
 def generateSegment(num, isInvalid = False):
-    pass
+    if isInvalid:
+        return [(6, 0), (6, 0)]
+
+    extractList = []
+    while len(extractList) != 2:
+        digit = num % 10
+        row = 0
+        if digit >= 5:
+            row = 3
+            digit -= 5
+        extractList.append((row, digit * 4))
+        num //= 10
+    return extractList[::-1]
 
 # The method for printing the seven segment
 def printSevenSegment(hours, minutes, seconds):
