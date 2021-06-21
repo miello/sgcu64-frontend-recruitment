@@ -1,8 +1,14 @@
 from os import system, name
 from time import sleep
 
-# Template of seven segment for each number
-# Each number represents as 3 x 4 array
+'''
+Template of seven segment for each number
+Each number represents as 3 x 4 array
+
+The number 0 - 4 begin in row index 0
+The number 5 - 9 begin at row index 3
+The invalid case begins at row index 6
+'''
 segment_str = '''
  __      __  __     
 |  |   | __| __||__|
@@ -15,7 +21,7 @@ segment_str = '''
  __ 
 '''
 
-# Seperator
+# Represent the seperator between hours, minutes and seconds
 seperator = ' · '
 
 # Ignore first newline character and split to each line
@@ -99,4 +105,5 @@ def printSevenSegment(hours, minutes, seconds):
         print()
 
 
+# Input time
 hours, minutes, seconds = map(int, input().split(':'))
