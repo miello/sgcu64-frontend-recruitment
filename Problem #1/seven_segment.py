@@ -39,7 +39,23 @@ def generateSegment(num, isInvalid = False):
 
 # The method for printing the seven segment
 def printSevenSegment(hours, minutes, seconds):
-    pass
+    invalidTime = False
+    if minutes > 59 or seconds > 59:
+        invalidTime = True
 
-# Input
+    hours = generateSegment(hours, invalidTime)
+    minutes = generateSegment(minutes, invalidTime)
+    seconds = generateSegment(seconds, invalidTime)
+    allSegment = hours + minutes + seconds
+    for i in range(3):
+        for idx, (row, column) in enumerate(allSegment):
+            for columnPrint in range(column, column + 4):
+                print(segment_str[row + i][columnPrint], end='')
+            if idx % 2 != 0 and idx != 5 and i != 0:
+                print(seperator, end='')
+            elif idx % 2 != 0 and i == 0:
+                print('   ', end='')
+            else: 
+                print(' ', end='')
+        print()
 hours, minutes, seconds = map(int, input().split(':'))
