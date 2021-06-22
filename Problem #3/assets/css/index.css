@@ -179,7 +179,7 @@ button:hover {
   }
 
   .content {
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-right: 122px;
   }
 }
