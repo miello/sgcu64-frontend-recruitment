@@ -84,7 +84,7 @@ button:hover {
 .cloud,
 .footer {
   /* USER CODE Begin: Hide it */
-
+  display: none;
   /* USER CODE END: Hide it  */
 }
 
