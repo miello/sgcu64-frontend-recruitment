@@ -1,3 +1,6 @@
+const form = document.getElementById("register-form");
+const input = document.getElementsByTagName("input");
+
 function addInvalidInputStyle(name) {
   document.getElementsByName(name)[0].classList.add("invalid-input");
 }
@@ -5,6 +8,13 @@ function addInvalidInputStyle(name) {
 function removeInvalidInputStyle(name) {
   document.getElementsByName(name)[0].classList.remove("invalid-input");
 }
+
+for (let i = 0; i < input.length; i++) {
+  input[i].addEventListener("input", () => {
+    input[i].classList.remove("invalid-input");
+  });
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(form);
