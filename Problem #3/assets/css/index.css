@@ -107,6 +107,10 @@ button:hover {
   justify-content: center;
 }
 
+.invalid-input {
+  border: 2px red solid;
+}
+
 /* USER CODE Begin: Manage screen width */
 @media screen and (min-width: 640px) {
   /* USER CODE END: Manage screen width */

@@ -1,11 +1,25 @@
-const form = document.getElementById("register-form")
-form.addEventListener("submit", event => {
-  event.preventDefault()
-  const formData = new FormData(form)
-  const data = {}
+function addInvalidInputStyle(name) {
+  document.getElementsByName(name)[0].classList.add("invalid-input");
+}
+
+function removeInvalidInputStyle(name) {
+  document.getElementsByName(name)[0].classList.remove("invalid-input");
+}
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(form);
+  const data = {};
+  const invalidList = [];
+
   for (const [key, value] of formData.entries()) {
     /* USER CODE Begin: Validate data */
-    data[key] = value
+    removeInvalidInputStyle(key);
+    data[key] = value;
+    // Check is empty
+    if (value === "") {
+      addInvalidInputStyle(key);
+      invalidList.push(`Required ${key}`);
+    }
     /* USER CODE Begin: Validate data */
   }
   console.log(data)
