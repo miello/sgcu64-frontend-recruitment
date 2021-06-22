@@ -59,3 +59,14 @@ form.addEventListener("submit", (event) => {
     addInvalidInputStyle("confirmpassword");
     invalidList.push("Password is not match with Confirm Password");
   }
+
+  if (invalidList.length) {
+    let alertText = "";
+    for (const text of invalidList) {
+      alertText += `- ${text} \n`;
+    }
+    window.alert(alertText);
+  } else {
+    window.alert("Register successfully");
+  }
+});
