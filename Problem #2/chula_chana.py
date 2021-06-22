@@ -3,16 +3,37 @@ locationList = ['Mahamakut Building', 'Sara Phra Kaew', 'CU Sport Complex', 'San
 peopleCountLocation = dict()
 phoneLocation = dict()
 
+'''
+Initialize the database by inserting each key (location) into database with default value zero
+Input:
+    None
+Return:
+    None
+'''
 def initializeDatabase():
     for location in locationList:
         peopleCountLocation[location] = 0
 
+'''
+The method that used for showing how many people in each location
+Input:
+    None
+Return:
+    None
+'''
 def peopleCountPage():
     print('Current Population')
     for idx, location in enumerate(locationList):
         peopleCount = peopleCountLocation[location]
         print(f'  {idx + 1}. {location}: {peopleCount}')
-
+'''
+The method that used for displaying check out page 
+which need to input the phone number
+Input:
+    None
+Return:
+    None
+'''
 def checkOutPage():
     print('Check out')
     phoneNumber = input('Enter phone number: ')
@@ -33,6 +54,14 @@ def checkOutPage():
 
     print(msg)
 
+'''
+The method that used for displaying check in page 
+which need to input the phone number and index of location
+Input:
+    None
+Return:
+    None
+'''
 def checkInPage():
     print('Check in')
     phoneNumber = input('Enter phone number: ')
@@ -74,6 +103,13 @@ def checkInPage():
 
     print(msg)
 
+'''
+The main program
+Input: 
+    None
+Return: 
+    None
+'''
 def main():
     initializeDatabase()
     while(True):
