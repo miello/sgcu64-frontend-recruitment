@@ -4,7 +4,10 @@ peopleCountLocation = dict()
 phoneLocation = dict()
 
 def peopleCountPage():
-    pass
+    print('Current Population')
+    for idx, location in enumerate(locationList):
+        peopleCount = peopleCountLocation[location]
+        print(f'  {idx + 1}. {location}: {peopleCount}')
 
 def checkOutPage():
     pass
