@@ -32,8 +32,20 @@ form.addEventListener("submit", (event) => {
     }
     /* USER CODE Begin: Validate data */
   }
-  console.log(data)
-  /* USER CODE Begin: What happened next after recieve form data (Optional) */
+
+  // Email Format
+  if (data["email"] !== "") {
+    const email = data["email"];
+
+    // Reference: http://emailregex.com/
+    var mailformat =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!mailformat.test(email)) {
+      invalidList.push("Email badly formatted");
+      addInvalidInputStyle("email");
+    }
+  }
+
 
   /* USER CODE END: What happened next after recieve form data (Optional) */
 })
