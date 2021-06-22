@@ -10,7 +10,21 @@ def peopleCountPage():
         print(f'  {idx + 1}. {location}: {peopleCount}')
 
 def checkOutPage():
-    pass
+    print('Check out')
+    phoneNumber = input('Enter phone number: ')
+
+    if phoneNumber not in phoneLocation:
+        phoneLocation[phoneNumber] = ''
+    
+    msg = None
+    if phoneLocation[phoneNumber] == '':
+        msg = 'You have not checked in yet'
+    else:
+        oldPlace = phoneLocation[phoneNumber]
+        peopleCountLocation[oldPlace] -= 1
+        msg = f'Check out from {oldPlace}'
+
+    print(msg)
 
 def checkInPage():
     print('Check in')
@@ -39,7 +53,7 @@ def checkInPage():
     if phoneLocation[phoneNumber] == '':
         phoneLocation[phoneNumber] = nameOfPlace
         peopleCountLocation[nameOfPlace] += 1
-        msg = f'You check in at {nameOfPlace}'
+        msg = f'Check in at {nameOfPlace}'
     elif phoneLocation[phoneNumber] == nameOfPlace:
         msg = f'You have already checked in at {nameOfPlace}'
     else:
