@@ -13,7 +13,45 @@ def checkOutPage():
     pass
 
 def checkInPage():
-    pass
+    print('Check in')
+    phoneNumber = input('Enter phone number: ')
+    
+    for idx, location in enumerate(locationList):
+        print(f'  {idx + 1}. {location}')
+
+    place = None
+    while True:
+        try: 
+            place = input('Select the place: ')
+            place = int(place)
+            if place < 1 or place > len(locationList):
+                raise Exception()
+            break
+        except:
+            print('Invalid index of place. Please try again.')
+    
+    nameOfPlace = locationList[place - 1]
+    msg = ''
+
+    if phoneNumber not in phoneLocation:
+        phoneLocation[phoneNumber] = ''
+    
+    if phoneLocation[phoneNumber] == '':
+        phoneLocation[phoneNumber] = nameOfPlace
+        peopleCountLocation[nameOfPlace] += 1
+        msg = f'You check in at {nameOfPlace}'
+    elif phoneLocation[phoneNumber] == nameOfPlace:
+        msg = f'You have already checked in at {nameOfPlace}'
+    else:
+        oldPlace = phoneLocation[phoneNumber]
+        phoneLocation[phoneNumber] = nameOfPlace
+
+        peopleCountLocation[oldPlace] -= 1
+        peopleCountLocation[nameOfPlace] += 1
+
+        msg = f'Check out from {oldPlace} and check in at {nameOfPlace}'
+
+    print(msg)
 
 def main():
     initializeDatabase()
