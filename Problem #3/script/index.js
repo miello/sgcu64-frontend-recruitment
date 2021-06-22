@@ -46,6 +46,16 @@ form.addEventListener("submit", (event) => {
     }
   }
 
+  const passwordValue = data["password"];
+  const confirmValue = data["confirmpassword"];
 
-  /* USER CODE END: What happened next after recieve form data (Optional) */
-})
+  // Password Matching
+  if (
+    passwordValue !== confirmValue &&
+    passwordValue !== "" &&
+    confirmValue !== ""
+  ) {
+    addInvalidInputStyle("password");
+    addInvalidInputStyle("confirmpassword");
+    invalidList.push("Password is not match with Confirm Password");
+  }
