@@ -3,6 +3,10 @@ locationList = ['Mahamakut Building', 'Sara Phra Kaew', 'CU Sport Complex', 'San
 peopleCountLocation = dict()
 phoneLocation = dict()
 
+def initializeDatabase():
+    for location in locationList:
+        peopleCountLocation[location] = 0
+
 def peopleCountPage():
     print('Current Population')
     for idx, location in enumerate(locationList):
@@ -97,13 +101,10 @@ def main():
         elif command == 3:
             peopleCountPage()
         elif command == 4:
+            print('Exit program')
             exit(0)
         else:
             print('Invalid number')
         print(menu_seperator)
-
-def initializeDatabase():
-    for location in locationList:
-        peopleCountLocation[location] = 0
 
 main()
