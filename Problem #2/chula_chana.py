@@ -21,7 +21,10 @@ def checkOutPage():
         msg = 'You have not checked in yet'
     else:
         oldPlace = phoneLocation[phoneNumber]
+
         peopleCountLocation[oldPlace] -= 1
+        phoneLocation[phoneNumber] = ''
+        
         msg = f'Check out from {oldPlace}'
 
     print(msg)
