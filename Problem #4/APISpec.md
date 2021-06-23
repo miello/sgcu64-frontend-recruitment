@@ -128,27 +128,37 @@
         ```
       - **Response Status:** 404 Not Found
 
-- **User Searching**
-  - **Description:** Get every user data
-  - **Path:** /user
+- **Search user**
+  - **Description:** Get user data by searching from firstName or lastName or both that will return as list of user
+  - **Path:** /user?firstName={firstName}&lastName={lastName}
   - **Method:** GET
   - **Header:** None
   - **Request Body:** None
   - **Request Params:** None
-  - **Request Query:** None
+  - **Request Query:** 
+    ```
+    {
+      firstName: string
+      lastName: string
+    }
+    ```
   - **Response:**
     - **Response Body:** JSON
     ```json
     [
       {
         "id": "123456",
-        "password": "hello_world",
         "firstName": "ABCDEF",
         "lastName": "abcdef",
         "salary": 15000,
       }
     ]
     ```
+      Empty Case
+      
+      ```json
+      []
+      ```
     - **Response Status:** 200 OK
 
 
