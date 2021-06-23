@@ -6,37 +6,37 @@
   - **Method:** POST
   - **Header:** None
   - **Request Body:** JSON
-  ```json
-  {
-    "id": "123456",
-    "password": "hello_world",
-    "firstName": "ABCDEF",
-    "lastName": "abcdef",
-    "salary": 15000,
-  }
-  ```
+      ```json
+      {
+        "id": "123456",
+        "password": "hello_world",
+        "firstName": "ABCDEF",
+        "lastName": "abcdef",
+        "salary": 15000,
+      }
+      ```
   - **Request Params:** None
   - **Request Query:** None
   - **Response:**
     - Create Successfully
       - **Response Body:** JSON
-      ```json
-      {
-        "id": "123456"
-      }
-      ```
+          ```json
+          {
+            "id": "123456"
+          }
+          ```
       - **Response Status:** 201 Created
     - Invalid request body
       - **Response Body:**: JSON
-      ```json
-      {
-        "msg": "Invalid"
-      }
-      ```
+          ```json
+          {
+            "msg": "Invalid"
+          }
+          ```
       - **Response Status**: 400 Bad Request
 
 - **Get all User**
-  - **Description:** Get every user data
+  - **Description:** Get every user data by return as list of user
   - **Path:** /user
   - **Method:** GET
   - **Header:** None
@@ -45,17 +45,17 @@
   - **Request Query:** None
   - **Response:**
     - **Response Body:** JSON
-    ```json
-    [
-      {
-        "id": "123456",
-        "password": "hello_world",
-        "firstName": "ABCDEF",
-        "lastName": "abcdef",
-        "salary": 15000,
-      }
-    ]
-    ```
+      ```json
+      [
+        {
+          "id": "123456",
+          "password": "hello_world",
+          "firstName": "ABCDEF",
+          "lastName": "abcdef",
+          "salary": 15000,
+        }
+      ]
+      ```
     - **Response Status:** 200 OK
 
 - **Modify user data by id**
@@ -64,19 +64,19 @@
   - **Method:** PUT
   - **Header:** None
   - **Request Body:** 
-  ```json
-  {
+    ```json
+    {
       "firstName": "123456",
       "lastName": "123456",
       "salary": 10000
-  }
-  ```
+    }
+    ```
   - **Request Params:** 
-  ```
-  {
-    userId: string
-  }
-  ```
+    ```
+    {
+      userId: string
+    }
+    ```
   - **Request Query:** None
   - **Response:**
     - Modify Successfully
@@ -84,19 +84,19 @@
       - **Response Status:** 204 No Content
     - Request body have forbidden field
       - **Response Body:** JSON
-      ```json
-      {
-        "msg": "Forbid to change user id"
-      }
-      ```
+        ```json
+        {
+          "msg": "Forbidden to change user id"
+        }
+        ```
       - **Response Status:** 403 Forbidden
     - Not Found User
-    - **Response Body:** JSON
-    ```json
-      {
-        "msg": "Not found this user id"
-      }
-    ```
+      - **Response Body:** JSON
+        ```json
+        {
+          "msg": "User Not found"
+        }
+        ```
       - **Response Status:** 404 Not Found
 
 - **Delete user by id**
@@ -106,21 +106,21 @@
   - **Header:** None
   - **Request Body:** None
   - **Request Params:** 
-  ```
-  {
+    ```
+    {
       userId: string
-  }
-  ```
+    }
+    ```
   - **Request Query:** None
   - **Response:**
     - Delete Successfully
-    - **Response Body:** JSON
-    ```json
-      {
+      - **Response Body:** JSON
+        ```json
+        {
           "id": "<userId>"
-      }
-    ```
-    - **Response Status:** 200 OK
+        }
+        ```
+      - **Response Status:** 200 OK
     - Not Found User
       - **Response Body:** JSON
         ```json
@@ -146,16 +146,16 @@
     ```
   - **Response:**
     - **Response Body:** JSON
-    ```json
-    [
-      {
-        "id": "123456",
-        "firstName": "ABCDEF",
-        "lastName": "abcdef",
-        "salary": 15000,
-      }
-    ]
-    ```
+      ```json
+      [
+        {
+          "id": "123456",
+          "firstName": "ABCDEF",
+          "lastName": "abcdef",
+          "salary": 15000,
+        }
+      ]
+      ```
       Empty Case
       
       ```json
