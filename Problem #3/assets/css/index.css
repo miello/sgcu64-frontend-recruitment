@@ -34,6 +34,7 @@ body {
   flex-direction: column;
   border-radius: 5px;
   width: 100%;
+  max-width: 500px;
   margin: 30px 20px 0px 20px;
   padding: 10px 25px 20px 25px;
   /* USER CODE End: Style the card */
@@ -112,7 +113,7 @@ button:hover {
 }
 
 /* USER CODE Begin: Manage screen width */
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
   /* USER CODE END: Manage screen width */
   body {
     background: url("../img/bg-desktop.svg");
