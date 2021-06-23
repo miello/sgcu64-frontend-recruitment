@@ -1,7 +1,7 @@
 **SGCU Company API Specification**
 
 - **Create User**
-  - **Description:** Create User with given input. Return the instance of user that stored in database only **id**
+  - **Description:** Create User with given input. Return only **id** of the user instance that stored in database 
   - **Path:** /user
   - **Method:** POST
   - **Header:** None
@@ -30,7 +30,7 @@
       - **Response Body:**: JSON
           ```json
           {
-            "msg": "Invalid"
+            "msg": "Invalid request body"
           }
           ```
       - **Response Status**: 400 Bad Request
@@ -90,7 +90,7 @@
         }
         ```
       - **Response Status:** 403 Forbidden
-    - Not Found User
+    - User Not Found 
       - **Response Body:** JSON
         ```json
         {
@@ -156,11 +156,9 @@
         }
       ]
       ```
-      Empty Case
+      Not matching to any user case
       
       ```json
       []
       ```
     - **Response Status:** 200 OK
-
-
