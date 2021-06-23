@@ -197,6 +197,13 @@ button:hover {
   }
 
   .content {
+    /*
+    Additional Idea:
+
+    Changed to flex-end because if we set kite and cloud element to have absolute position 
+    then it will be shift the content to the left side of the container, 
+    so we change it that the content will start at the end of container instead 
+    */
     justify-content: flex-end;
     margin-right: 122px;
   }
