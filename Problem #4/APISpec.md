@@ -66,7 +66,9 @@
   - **Request Body:** 
   ```json
   {
-    "firstName": "123456"
+      "firstName": "123456",
+      "lastName": "123456",
+      "salary": 10000
   }
   ```
   - **Request Params:** 
