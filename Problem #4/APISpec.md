@@ -10,13 +10,13 @@
   {
     "id": "123456",
     "password": "hello_world",
-    "firstName": "",
-    "lastName": "",
+    "firstName": "ABCDEF",
+    "lastName": "abcdef",
     "salary": 15000,
   }
   ```
-  - **Request Params:**
-  - **Request Query:**
+  - **Request Params:** None
+  - **Request Query:** None
   - **Response:**
     - Create Successfully
       - **Response Body:** JSON
@@ -34,3 +34,102 @@
       }
       ```
       - **Response Status**: 400 Bad Request
+
+- **Get all User**
+  - **Description:** Get every user data
+  - **Path:** /user
+  - **Method:** GET
+  - **Header:** None
+  - **Request Body:** None
+  - **Request Params:** None
+  - **Request Query:** None
+  - **Response:**
+    - **Response Body:** JSON
+    ```json
+    [
+      {
+        "id": "123456",
+        "password": "hello_world",
+        "firstName": "ABCDEF",
+        "lastName": "abcdef",
+        "salary": 15000,
+      }
+    ]
+    ```
+    - **Response Status:** 200 OK
+
+- **Modify user data by id**
+  - **Description:** Get every user data
+  - **Path:** /user
+  - **Method:** GET
+  - **Header:** None
+  - **Request Body:** None
+  - **Request Params:** None
+  - **Request Query:** None
+  - **Response:**
+    - **Response Body:** JSON
+    ```json
+    [
+      {
+        "id": "123456",
+        "password": "hello_world",
+        "firstName": "ABCDEF",
+        "lastName": "abcdef",
+        "salary": 15000,
+      }
+    ]
+    ```
+    - **Response Status:** 200 OK
+
+- **Delete user by id**
+  - **Description:** Get every user data
+  - **Path:** /user/{id}
+  - **Method:** GET
+  - **Header:** None
+  - **Request Body:** None
+  - **Request Params:** 
+  ```
+  {
+  
+  }
+  ```
+  - **Request Query:** None
+  - **Response:**
+    - **Response Body:** JSON
+    ```json
+    [
+      {
+        "id": "123456",
+        "password": "hello_world",
+        "firstName": "ABCDEF",
+        "lastName": "abcdef",
+        "salary": 15000,
+      }
+    ]
+    ```
+    - **Response Status:** 200 OK
+
+- **User Searching**
+  - **Description:** Get every user data
+  - **Path:** /user
+  - **Method:** GET
+  - **Header:** None
+  - **Request Body:** None
+  - **Request Params:** None
+  - **Request Query:** None
+  - **Response:**
+    - **Response Body:** JSON
+    ```json
+    [
+      {
+        "id": "123456",
+        "password": "hello_world",
+        "firstName": "ABCDEF",
+        "lastName": "abcdef",
+        "salary": 15000,
+      }
+    ]
+    ```
+    - **Response Status:** 200 OK
+
+
