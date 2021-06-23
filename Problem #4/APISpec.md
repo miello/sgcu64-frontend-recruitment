@@ -98,32 +98,35 @@
       - **Response Status:** 404 Not Found
 
 - **Delete user by id**
-  - **Description:** Get every user data
-  - **Path:** /user/{id}
-  - **Method:** GET
+  - **Description:** Delete user data by user id
+  - **Path:** /user/{userId}
+  - **Method:** DELETE
   - **Header:** None
   - **Request Body:** None
   - **Request Params:** 
   ```
   {
-  
+      userId: string
   }
   ```
   - **Request Query:** None
   - **Response:**
+    - Delete Successfully
     - **Response Body:** JSON
     ```json
-    [
       {
-        "id": "123456",
-        "password": "hello_world",
-        "firstName": "ABCDEF",
-        "lastName": "abcdef",
-        "salary": 15000,
+          "id": "<userId>"
       }
-    ]
     ```
     - **Response Status:** 200 OK
+    - Not Found User
+      - **Response Body:** JSON
+        ```json
+        {
+          "msg": "User Not found"
+        }
+        ```
+      - **Response Status:** 404 Not Found
 
 - **User Searching**
   - **Description:** Get every user data
